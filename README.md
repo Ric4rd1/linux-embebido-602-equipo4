@@ -2,5 +2,5 @@
 
 Fiona Stasi Fernández - A01733692
 
-## Ricard Catalá Garfias A01710071
+Ricard Catalá Garfias A01710071
 
