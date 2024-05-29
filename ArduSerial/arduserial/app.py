@@ -66,7 +66,7 @@ class App(Frame):
     def read_temperature(self,) -> None:
         if self.serial_device is not None:
             temperature = self.serial_device.send('TC2')
-            self.temperature_label['text'] = f"{temperature[1:-4]} °C"
+            self.temperature_label['text'] = f"{temperature[1:-4]} "
             return
         messagebox.showerror("Device not connected", 'Connect to a device first')
     
