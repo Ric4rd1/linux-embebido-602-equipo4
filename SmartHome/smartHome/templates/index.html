@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Color de fondo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/li">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+   
+<style>
+    body{
+    height: 100vh;
+    background: linear-gradient(45deg, #6C22A6, #6962AD,#83C0C1,#96E9C6);
+    background-size: 400% 400%;
+    animation:gradient 12s ease-in infinite;
+    
+}
+
+
+
+
+@keyframes gradient{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+            text-align: center;
+            color: white;
+            font-size: 3.5em; /* Ajusta el tamaño de la fuente según tus necesidades */
+        }
+        h2 {
+            text-align: left;
+            color: rgb(248, 242, 242);
+            font-size: 2.5em; /* Ajusta el tamaño de la fuente según tus necesidades */
+        }
+    h3 {
+            text-align: left;
+            color: rgb(253, 248, 248);
+            font-size: 1.5em; /* Ajusta el tamaño de la fuente según tus necesidades */
+        }
+        h4 {
+            text-align: center;
+            color: rgb(250, 247, 247);
+            font-size: 2.5em; /* Ajusta el tamaño de la fuente según tus necesidades */
+        }
+        h5 {
+            text-align: center;
+            color: rgb(250, 248, 248);
+            font-size: 2.5em; /* Ajusta el tamaño de la fuente según tus necesidades */
+        }
+        h6 {
+            text-align: center;
+            color: rgb(241, 231, 231);
+            font-size: 2.5em; /* Ajusta el tamaño de la fuente según tus necesidades */
+        }
+    
+
+h7 {
+            text-align: left;
+            color: rgb(255, 255, 255);
+            font-size: 1.8em; /* Ajusta el tamaño de la fuente según tus necesidades */
+        }
+
+        
+
+        .activo .fas {
+            color: yellow;
+        }
+        .temperature-section {
+            margin-top: 100px;
+            text-align: center;
+            float: right; /* Añadido */
+            width: 300px; /* Ajusta el ancho según tus necesidades */
+            padding: px; /* Opcional: añade relleno */
+        }
+
+        .temperature-output {
+            font-size: 30px;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 0 10px;
+        }
+
+
+/* Estilo del ícono de luz */
+.luces-icon {
+            font-size: 100px; /* Tamaño del ícono */
+            color: rgb(255, 255, 255); /* Color inicial del ícono */
+            transition: color 0.5s; /* Añade una transición suave al cambio de color */
+            position: absolute; /* Permite posicionar el ícono de forma absoluta */
+            top: 250px; /* Alinea verticalmente el ícono */
+            left: 388px; /* Alinea horizontalmente el ícono */
+            transform: translate(-50%, -50%); /* Centra el ícono */
+        }
+
+        /* Estilo del ícono de luz cuando está encendido */
+        .activo .luces-icon {
+            color: rgb(255, 255, 0); /* Color del ícono cuando la luz está encendida */
+        }
+         
+
+
+
+ /* Estilo inicial del cuadro */
+  /* Estilo del ícono de timbre */
+  .timbre-icon {
+            font-size: 100px; /* Tamaño del ícono */
+            color: rgb(254, 251, 251); /* Color inicial del ícono */
+            transition: color 0.5s; /* Añade una transición suave al cambio de color */
+            position: absolute; /* Permite posicionar el ícono de forma absoluta */
+            top: 400px; /* Distancia desde la parte superior */
+            left: 1020px; /* Distancia desde la izquierda */
+        }
+    
+
+        /* Estilo del ícono de timbre cuando está activado */
+        .activo .timbre-icon {
+            color: rgb(128, 0, 122); /* Color del ícono cuando el timbre está activado */
+        }
+
+        
+
+        /* Estilo del ícono de puerta */
+        .puerta-icon {
+            font-size: 100px; /* Tamaño del ícono */
+            color: rgb(251, 245, 245); /* Color inicial del ícono */
+            transition: color 0.5s; /* Añade una transición suave al cambio de color */
+            position: absolute; /* Permite posicionar el ícono de forma absoluta */
+            top: 450px; /* Alinea verticalmente el ícono */
+            left: 390px; /* Alinea horizontalmente el ícono */
+            transform: translate(-50%, -50%); /* Centra el ícono */
+        }
+        .activo .puerta-icon {
+            color: rgb(239, 6, 154); /* Color del ícono cuando el timbre está activado */
+        }
+
+        
+
+
+        
+       /* Estilo del ícono de televisión */
+       .television-icon {
+            font-size: 100px; /* Tamaño del ícono */
+            color: rgb(248, 243, 243); /* Color inicial del ícono */
+            transition: color 0.5s; /* Añade una transición suave al cambio de color */
+            position: absolute; /* Permite posicionar el ícono de forma absoluta */
+            top: 250px; /* Alinea verticalmente el ícono */
+            left: 1050px; /* Alinea horizontalmente el ícono */
+            transform: translate(-50%, -50%); /* Centra el ícono */
+        }
+
+        /* Estilo del ícono de televisión cuando está encendido */
+        .activo .television-icon {
+            color: rgb(0, 128, 0); /* Color del ícono cuando la televisión está encendida */
+        }
+        .temperatura-icon {
+    font-size: 100px; /* Tamaño del ícono */
+    color: rgb(239, 231, 231); /* Color inicial del ícono (rojo, por ejemplo) */
+    transition: color 0.5s; /* Transición suave al cambio de color */
+    position: absolute; /* Posiciona el ícono de forma absoluta */
+    top: 500px; /* Distancia desde la parte superior */
+    left: 1320px; /* Distancia desde la izquierda */
+}
+
+/* Estilo del ícono de temperatura cuando está activado */
+.activo .temperatura-icon {
+    color: rgb(235, 239, 244); /* Color del ícono cuando está activado (azul, por ejemplo) */
+}
+        
+        
+        
+
+
+
+
+</style>
+    
+</head>
+<body>
+</body>
+</html>
+
+   
+    </div>
+</div>
+    
+<div class="temperature-section">
+    <h2>Temperatura</h2>
+    <div class="button-container">
+        <button onclick="mostrarTemperatura('C')">Mostrar Temperatura en °C</button>
+        <button onclick="mostrarTemperatura('F')">Mostrar Temperatura en °F</button>
+    </div>
+    <div class="temperature-output" id="temperatureOutput">Temperatura: --</div>
+</div>
+<div id="temperaturaCuadro" class="activate">
+    <i class="fas fa-thermometer-half temperatura-icon"></i> <!-- Ícono de temperatura de Font Awesome -->
+
+</div>
+       
+    </div>
+
+<h1>Casa Inteligente</h1>
+
+<link rel="stylesheet" href="styles.css">
+
+
+    
+</body>
+<!--ENcender luz-->
+<h2>Luces</h2>
+<div class="container-1">
+   <h3> <p>Estado:</p> </h3>
+    <div class="form-group">
+        <input type="radio" name="luces" id="luces_encendidas" value="1" onclick="activarLuces('1')">
+       <h7> <label for="luces_encendidas">Encendido</label></h7>
+    </div>
+    <div class="form-group">
+        <input type="radio" name="luces" id="luces_apagadas" value="0" onclick="activarLuces('0')">
+        <h7> <label for="luces_apagadas">Apagado</label></h7>
+    </div>
+</div>
+<div id="lucesCuadro" >
+    <i class="fas fa-lightbulb luces-icon"></i> <!-- Ícono de luces de Font Awesome -->
+</div>
+
+
+        <h2>Puerta</h2>
+        <div class="container-2">
+           <h3> <p>Estado:</p> </h3>
+            <div class="form-group">
+                <input type="radio" name="puerta" id="puerta_encendida" value="1" onclick="activarPuerta('1')">
+               <h7> <label for="puerta_encendida">Abierta</label></h7>
+            </div>
+            <div class="form-group">
+                <input type="radio" name="puerta" id="puerta_apagada" value="0" onclick="activarPuerta('0')">
+               <h7> <label for="puerta_apagada">Cerrada</label></h7>
+            </div>
+        </div> 
+
+        <div id="puertaCuadro">
+            <i class="fas fa-door-closed puerta-icon"></i> <!-- Ícono de puerta de Font Awesome -->
+        </div>
+
+
+ 
+<div class="container-3" style="margin-top: -470px; margin-left: 700px;">
+    <h2>Television</h2> 
+
+   <h3> <p>Estado: </p> </h3>
+
+             <div class="form-group">
+        
+                    <input type="radio" name="size" id="television_encendido" value="1" onclick="activarTelevision( '1')">
+                    <h7><label for="television_encendido">Encendido</label> </h7>
+            </div>
+            <div class="form-group">
+                    <input type="radio" name="size" id="television_apagado" value="0" onclick="activarTelevision( '0')">
+                  <h7>   <label for="television_apagado">Apagado</label> </h7>
+            </div>
+</div>
+                     <div id="televisionCuadro">
+                            <i class="fas fa-tv television-icon"></i>
+
+                     </div>
+<div class="container-4" style="margin-top: 40px; margin-left: 700px;">                    
+<h2>Timbre</h2>
+                        <p>Presiona el timbre:</p>
+                       
+        <button onclick="activarTimbre()">Timbre</button>
+    <div id="timbreCuadro" >
+        <i class="fas fa-bell timbre-icon"></i> <!-- Ícono de timbre de Font Awesome -->
+
+        <script>
+        function enviarEstado(dispositivo, estado) {
+                                fetch('/actualizar_estado', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                    },
+                                    body: JSON.stringify({ dispositivo: dispositivo, estado: estado }),
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log('Success:', data);
+                                })
+                                .catch((error) => {
+                                    console.error('Error:', error);
+                                });
+                            }
+    
+
+
+                            
+    function activarLuces(estado) {
+    var lucesCuadro = document.getElementById('lucesCuadro');
+    if (estado === '1') {
+        enviarEstado('L', '1'); // Llamar a la función para enviar el estado al servidor
+        lucesCuadro.classList.add('activo'); // Agregar la clase 'activo' para cambiar el color del ícono
+    } else {
+        enviarEstado('L', '0'); // Llamar a la función para enviar el estado al servidor
+        lucesCuadro.classList.remove('activo'); // Remover la clase 'activo' para volver al color inicial del ícono
+    }
+}
+    
+    
+    
+        function activarTimbre(estado) {
+            enviarEstado('timbre', '1');
+           
+            document.getElementById('timbreCuadro').classList.add('activo');
+            setTimeout(() => {
+                
+                document.getElementById('timbreCuadro').classList.remove('activo');
+           
+           
+           
+            }, 1000);
+        }
+        function activarPuerta(estado) {
+            var puertaCuadro = document.getElementById('puertaCuadro');
+            if (estado === '1') {
+                enviarEstado('S', '1');
+                puertaCuadro.classList.add('activo');
+            } else {
+                enviarEstado('S', '0');
+                puertaCuadro.classList.remove('activo');
+            }
+        }
+
+        function activarTelevision(estado) {
+            var televisionCuadro = document.getElementById('televisionCuadro');
+            if (estado === '1') {
+                enviarEstado('D', '1');
+                televisionCuadro.classList.add('activo');
+            } else {
+                enviarEstado('D', '0');
+                televisionCuadro.classList.remove('activo');
+            }
+        }
+
+        function mostrarTemperatura(unidad) {
+            fetch('/get_temperature', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ parametro: unidad })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let temperatura = data.temperatura; // Suponiendo una temperatura de ejemplo
+                let salida = document.getElementById('temperatureOutput');
+                let icono = document.querySelector('.temperatura-icon');
+
+                if (unidad === 'F') {
+                    temperatura = (temperatura * 9/5) + 32;
+                    salida.innerHTML = `Temperatura: ${temperatura.toFixed(1)} °F`;
+                    enviarEstado(temperatura, 'TF');
+                } else {
+                    salida.innerHTML = `Temperatura: ${temperatura.toFixed(1)} °C`;
+                    enviarEstado(temperatura, 'TC');
+                }
+
+                // Cambiar color del ícono basado en la temperatura
+                if (temperatura <= 0) {
+                    icono.style.color = 'white'; // Temperatura baja, color blanco
+                } else if (temperatura > 1 && temperatura <= 10) {
+                    icono.style.color = 'blue'; // Temperatura baja, color azul
+                } else if (temperatura > 10 && temperatura <= 30) {
+                    icono.style.color = 'yellow'; // Temperatura media, color amarillo
+                } else {
+                    icono.style.color = 'red'; // Temperatura alta, color rojo
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+
+
+    </script>
+    </body>
+</html>
+        
+```
